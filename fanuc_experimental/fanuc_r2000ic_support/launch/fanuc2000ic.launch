@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+
+<param name="robot_description" command="$(find xacro)/xacro --inorder '$(find fanuc_r2000ic_support)/urdf/r2000ic125l_macro.xacro'" />
+
+<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+
+<node name="joint_state_publisher_gui" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui" />
+
+<node pkg="rviz" type="rviz" name="rviz" required="true"
+args="-d $(find fanuc_r2000ic_support)/rviz/kr20.rviz"/>
+
+</launch>
